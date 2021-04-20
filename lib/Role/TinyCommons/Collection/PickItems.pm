@@ -88,6 +88,8 @@ Otherwise, resampling is allowed resulting in possible duplicates in the result.
 
 This argument is optional to implement.
 
+=back
+
 
 =head1 PROVIDED METHODS
 
