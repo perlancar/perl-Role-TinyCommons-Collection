@@ -76,10 +76,11 @@ Usage:
 
  my @results = $obj->find_item(%args);
 
-Find an item. Must return either 0 (if not found) or 1 (if found) item. If
+Find an item. Must return the found items as a list. By default must return
+either 0-item list if item is not found, or 1-item list if item is found. If
 L</all> mode is turned on, can return more than one item. The item(s) themselves
 must be returned, unless L</return_pos> mode is enabled, in which the positions
-are returned.
+are returned instead.
 
 Arguments:
 
