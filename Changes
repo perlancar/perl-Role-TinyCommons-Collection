@@ -1,18 +1,21 @@
+0.005   2021-05-03  Released-By: PERLANCAR; Urgency: medium
+
+	- Add role: RTC:Position.
+
+
 0.004   2021-05-03  Released-By: PERLANCAR; Urgency: medium
 
-	- Add roles:
-          Role::TinyCommons::Collection::{Subscript,CompareItems,FindItem::Iterator}.
+	- Add roles: RTC:{Subscript,CompareItems,FindItem::Iterator}.
 
 
 0.003   2021-04-20  Released-By: PERLANCAR; Urgency: medium
 
-	- Add roles:
-	  Role::TinyCommons::Collection::PickItems::{Iterator,RandomSeek}.
+	- Add roles: RTC:PickItems::{Iterator,RandomSeek}.
 
 
 0.002   2021-04-20  Released-By: PERLANCAR; Urgency: medium
 
-	- Add role: Role::TinyCommons::Collection::PickItems.
+	- Add role: RTC:PickItems.
 
 
 0.001   2021-04-20  Released-By: PERLANCAR
