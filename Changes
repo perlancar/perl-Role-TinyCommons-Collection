@@ -1,3 +1,9 @@
+0.006   2021-05-03  Released-By: PERLANCAR; Urgency: medium; Backward-Incompatible: yes
+
+	- [incompatible change] Rename roles: Subscript -> GetItemByKey,
+	  Position -> GetItemByPos.
+
+
 0.005   2021-05-03  Released-By: PERLANCAR; Urgency: medium
 
 	- Add role: RTC:Position.
