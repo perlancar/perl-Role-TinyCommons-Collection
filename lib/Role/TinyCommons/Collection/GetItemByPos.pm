@@ -1,4 +1,4 @@
-package Role::TinyCommons::Collection::Position;
+package Role::TinyCommons::Collection::GetItemByPos;
 
 # AUTHORITY
 # DATE
@@ -20,10 +20,10 @@ requires 'has_item_at_pos';
 
 =head1 DESCRIPTION
 
-This role is for collections that support locating an item via an integer
-position (0 is the first, 1 the second and so on). Arrays are one such
-collection. This operation is a more specific type of subscripting (see
-L<Role::TinyCommons::Collection::Subscript>).
+This role is for ordered collections that support locating an item via an
+integer position (0 is the first, 1 the second and so on). Arrays are example of
+such collections. This operation is a more specific type of getting an item by
+key (see L<Role::TinyCommons::Collection::GetItemByKey>).
 
 
 =head1 REQUIRED METHODS
@@ -41,11 +41,11 @@ no item at such position.
 
 Usage:
 
- my $has_item = $obj->has_item_at($pos); # => bool
+ my $has_item = $obj->has_item_at_pos($pos); # => bool
 
 Check whether the collection has item at position C<$pos>.
 
 
 =head1 SEE ALSO
 
-L<Role::TinyCommons::Collection::Subscript>
+L<Role::TinyCommons::Collection::GetItemByKey>
