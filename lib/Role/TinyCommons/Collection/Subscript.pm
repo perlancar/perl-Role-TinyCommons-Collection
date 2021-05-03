@@ -9,7 +9,9 @@ use Role::Tiny;
 
 ### required methods
 
-requires 'item_at';
+requires 'get_item_at';
+requires 'has_item_at';
+requires 'get_all_subscripts';
 
 1;
 # ABSTRACT: Subscripting (key-ing) operation
@@ -53,3 +55,5 @@ Return all known subscripts or keys. Note that a specific order is not required.
 
 
 =head1 SEE ALSO
+
+L<Role::TinyCommons::Collection::Position>
