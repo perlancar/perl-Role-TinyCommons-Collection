@@ -45,7 +45,7 @@ sub pick_items {
 This role provides pick_items() that picks random items by random seeking. It is
 more suitable for huge collections that support C<get_item_at_pos> and an
 efficient C<get_item_count>. If your collection does not support those methods,
-there's an alternative can use L<Role::TinyCommons::FindItems::Iterator>.
+there's an alternative you can use: L<Role::TinyCommons::FindItems::Iterator>.
 
 
 =head1 ROLES MIXED IN
