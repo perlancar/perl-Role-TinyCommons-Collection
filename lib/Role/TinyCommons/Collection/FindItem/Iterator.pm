@@ -15,7 +15,9 @@ with 'Role::TinyCommons::Collection::FindItem';
 ### requires
 
 requires 'each_item';
-requires 'cmp_items'; # Role::TinyCommons::Collection::CompareItems
+
+### optionally depends
+# 'cmp_items'; # Role::TinyCommons::Collection::CompareItems
 
 ### provides
 
@@ -27,15 +29,27 @@ sub find_item {
     my $all         = $args{all};
 
     my @results;
-    $self->each_item(
-        sub {
-            my ($iter_item, $obj, $pos) = @_;
-            if ($obj->cmp_items($iter_item, $search_item) == 0) {
-                push @results, $return_pos ? $pos : $iter_item;
-                return 0 unless $all;
-            }
-            1;
-        });
+    if ($self->can('cmp_items')) {
+        $self->each_item(
+            sub {
+                my ($iter_item, $obj, $pos) = @_;
+                if ($obj->cmp_items($iter_item, $search_item) == 0) {
+                    push @results, $return_pos ? $pos : $iter_item;
+                    return 0 unless $all;
+                }
+                1;
+            });
+    } else {
+        $self->each_item(
+            sub {
+                my ($iter_item, $obj, $pos) = @_;
+                if (($iter_item cmp $search_item) == 0) {
+                    push @results, $return_pos ? $pos : $iter_item;
+                    return 0 unless $all;
+                }
+                1;
+            });
+    }
     @results;
 }
 
@@ -59,6 +73,8 @@ L<Role::TinyCommons::Collection::FindItem>
 
 Provided by roles like in L<Role::TinyCommons::Iterator::Resettable> or
 L<Role::TinyCommons::Iterator::Circular>.
+
+=head1 OPTIONALLY DEPENDED METHODS
 
 =head2 cmp_items
 
