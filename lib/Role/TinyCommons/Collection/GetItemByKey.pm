@@ -13,6 +13,11 @@ requires 'get_item_at_key';
 requires 'has_item_at_key';
 requires 'get_all_keys';
 
+### provides
+
+# alias for has_item_at_key
+sub has_key { my $self = shift; $self->has_item_at_key(@_) }
+
 1;
 # ABSTRACT: Locating an item by a key
 
@@ -42,7 +47,8 @@ Usage:
 
  my $has_item = $obj->has_item_at_key($key); # => bool
 
-Check whether the collection has item at key C<$key>.
+Check whether the collection has item at key C<$key>. In Perl, this is
+equivalent to doing C<exists()> on a hash.
 
 =head2 get_all_keys
 
@@ -51,6 +57,13 @@ Usage:
  my @keys = $obj->get_all_keys;
 
 Return all known keys. Note that a specific order is not required.
+
+
+=head1 PROVIDED METHODS
+
+=head1 has_key
+
+Alias for L</has_item_at_key>.
 
 
 =head1 SEE ALSO
