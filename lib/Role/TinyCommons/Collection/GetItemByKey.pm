@@ -61,7 +61,7 @@ Return all known keys. Note that a specific order is not required.
 
 =head1 PROVIDED METHODS
 
-=head1 has_key
+=head2 has_key
 
 Alias for L</has_item_at_key>.
 
