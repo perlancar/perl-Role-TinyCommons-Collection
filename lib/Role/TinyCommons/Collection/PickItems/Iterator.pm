@@ -43,18 +43,21 @@ sub pick_items {
 }
 
 1;
-# ABSTRACT: Provide pick_items() from a resettable iterator
+# ABSTRACT: Provide pick_items() that picks by iterating all items once
 
 =for Pod::Coverage ^(.+)$
 
 =head1 DESCRIPTION
 
-This role provides pick_items() that picks random items by doing a one-time full
-scan (or iteration) of a resettable iterator.
+This role provides C<pick_items()> that picks random items by doing a one-time
+full scan (or iteration) of a resettable iterator. The algorithm is a modified
+form of one that was presented in Learning Perl book.
 
 Note that for a huge collection, this might not be a good idea. If your
-collection support C<get_item_at_pos> and an efficient C<get_item_count>, you
-can use L<Role::TinyCommons::FindItems::RandomSeek>.
+collection supports a fast C<get_item_at_pos> and an efficient
+C<get_item_count>, you can use L<Role::TinyCommons::FindItems::RandomPos>. If
+your collection's items are lines from a filehandle, you can use
+L<Role::TinyCommons::FindItems::RandomSeekLines>.
 
 
 =head1 ROLES MIXED IN

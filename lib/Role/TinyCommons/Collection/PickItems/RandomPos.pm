@@ -1,4 +1,4 @@
-package Role::TinyCommons::Collection::PickItems::RandomSeek;
+package Role::TinyCommons::Collection::PickItems::RandomPos;
 
 # AUTHORITY
 # DATE
@@ -36,17 +36,23 @@ sub pick_items {
 }
 
 1;
-# ABSTRACT: Provide pick_items() that gets items by random seeking
+# ABSTRACT: Provide pick_items() that picks items by random positions
 
 =for Pod::Coverage ^(.+)$
 
 =head1 DESCRIPTION
 
-This role provides pick_items() that picks random items by random seeking. It is
-more suitable for huge collections that support C<get_item_at_pos> (see
-L<Role::TinyCommons::Collection::Position>) and an efficient C<get_item_count>.
-If your collection does not support those methods, there's an alternative you
-can use: L<Role::TinyCommons::FindItems::Iterator>.
+This role provides pick_items() that picks random items by position. It is more
+suitable for huge collections that support a fast C<get_item_at_pos> (see
+L<Role::TinyCommons::Collection::GetItemByPos>) and an efficient
+C<get_item_count>, for example when you store your items in a Perl array (e.g.
+L<ArrayDataRole::Source::Array>). If your collection does not support those
+methods, there's an alternative you can use:
+L<Role::TinyCommons::FindItems::Iterator>.
+
+Another alternative using binary search:
+L<Role::TinyCommons::Collection::PickItems::RandomSeekLines>, if your items are
+lines from a filehandle.
 
 
 =head1 ROLES MIXED IN
